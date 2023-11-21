@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+    <script>
+        // Configura tu proyecto de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyBmrmA-KZPngs_rfIk_6xZQXl4WBcnoKpo",
+            authDomain: "spotify-piano-sessions.firebaseapp.com",
+            projectId: "spotify-piano-sessions",
+            storageBucket: "spotify-piano-sessions.appspot.com",
+            messagingSenderId: "377869811144",
+            appId: "1:377869811144:web:e14fdb870999eb0c4dd4fd",
+        };
+
+        // Inicializa Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+
+    <link rel="stylesheet" href="styles.css">
+
+    <title>📱Mobile</title>
+</head>
+
+<body>
+
+    <script>
+        const getDNS = "<%= DNS %>"
+    </script>
+
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+        integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous">
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"
+        integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="index.js" async defer></script>
+
+    <!---<audio autoplay> 
+        <source src="mupi-assets/audio/dancing-song.mp3" type="audio/mpeg" id="songToDance">
+    </audio> --->
+
+    <form action="" id="Registro">
+        <!-- Campo para el nombre -->
+        <label for="name">¿ Cual es tu nombre?</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Sphie" required>
+
+        <!-- Campo para el correo -->
+        <label for="Correo">¿Cual es tu email?</label>
+        <input type="email" id="correo" name="correo" placeholder="User@gmail.com" required>
+
+        <!-- Botón de registro -->
+        <button onclick="BtnIrAjugar()">¡A jugar!</button>
+
+    </form>
+
+    <form action="" id="Puesto">
+
+        <h1 id="titulo">PUESTO</h1>
+        <h1 id="numero">N°1</h1>
+        <h2>Muy bien nombre</h2>
+        <h3>Te has ganado un cupon de descuento del 10% para tu plan de Spotify</h3>
+        <h4>El codigo sera enviado a tu correo</h4>
+
+        <button type="button" onclick="irainicio()">Hola mundo</button>
+
+    </form>
+
+</body>
+
+</html>
