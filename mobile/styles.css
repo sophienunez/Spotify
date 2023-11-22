@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+
+element.style {
+    width: 1540px;
+    height: 850px;
+}
+
+.form{
+    margin: 190px 0 0 0;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+*{
+    color: #F8E704;
+}
+
+#Registro{
+height: 800px;
+flex-shrink: 0;
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+align-items: center;
+padding: 40px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+width: auto;
+}
+
+#Registro label {
+    color: #F8E704;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-weight: 700;
+    margin: 82px 0px 10px 0px;
+    margin-bottom: 17px;
+}
+
+#Registro input {
+    margin-top: center;
+    color: #000000;
+    border: none;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    padding: 10px;
+    border-radius: 35px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+#Registro button {
+    margin-top: 110px;
+    background-color: transparent;
+    width: 213px;
+    height: 67.149px;
+    flex-shrink: 0;
+    border-radius: 33.575px;
+    border: 2.166px solid white;
+    cursor: pointer;
+    color: white;
+    font-family: Montserrat;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#Puesto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    max-width: 300px; /* Ajusta el ancho máximo según tus necesidades */
+    padding: 72px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#titulo {
+    margin-top: 49px;
+    color: #F8E704;
+    text-align: center;
+    font-family: Clash Display;
+    font-size: 49.404px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+#numero{
+    margin-top: -33px;
+    margin-bottom: 20px;
+    color: #F8E704;
+    text-align: center;
+    font-family: Clash Display;
+    font-size: 96px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#Puesto h2 {
+    margin-top: 24px;
+    margin-bottom: 20px;
+    color: #F8E704;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+#Puesto h3 {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    color:white;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 23px;
+    font-style:italic;
+    font-weight: 50;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+
+#Puesto h4 {
+    margin-top: 47px;
+    margin-bottom: 20px;
+    color: #F8E704;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+#Puesto button {
+    margin-top: 50px;
+    background-color: transparent;
+    width: 213px;
+    height: 67.149px;
+    flex-shrink: 0;
+    border-radius: 33.575px;
+    border: 2.166px solid #F8E704;
+    cursor: pointer;
+    color: #F8E704;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+
+#Puesto button:hover {
+    background-color: #FF709B;
+    
+}
