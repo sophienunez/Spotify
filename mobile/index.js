@@ -7,6 +7,7 @@ let registroImg ="./img/registro.png";
 let coronaImg ="./img/corona.png";
 let fondoPuntaje ="./img/registro.png";
 let graciasImg = "./img/gracias.png"
+let graciasStartTime;
 
 function preload() {
   registro1 = loadImage(registroImg);
@@ -62,26 +63,8 @@ function draw() {
 
 // cambiar la pantalla al hacer clic en el botón
 
-async function BtnIrAjugar() {
-  try {
-const nombre = document.getElementById("nombre").value;
-    const correo = document.getElementById("correo").value;
-  
-    // Registra al usuario en Firebase
-    firebase.auth().createUserWithEmailAndPassword(correo, "CONTRASEÑA_POR_DEFECTO")
-      .then((userCredential) => {
-        // El usuario se registró exitosamente
-        console.log("Usuario registrado con éxito:", userCredential.user);
-  
-        // Puedes realizar acciones adicionales aquí, como redireccionar a otra página
-      })
-  }
-    
-      catch(e) {
-        // Manejar errores durante el registro
-        console.error("Error al registrar usuario:", error.message);
-      };
-  
+function BtnIrAjugar() {
+  screen=2;
 }
 
 // mostrar el formulario REGISTRO
@@ -125,6 +108,21 @@ function irainicio(){
   screen=3;
 }
 
-function Gracias(){
-  image(gracias1,0,0,windowWidth,windowHeight)
+function Gracias() {
+  // Verifica si es la primera vez que entras al caso 8
+  if (!graciasStartTime) {
+    graciasStartTime = millis(); // Establece el tiempo de inicio
+  }
+
+  // Lógica para mostrar la imagen de agradecimiento
+  image(gracias1, 0, 0, windowWidth, windowHeight);
+
+  // Verifica si han pasado 5 segundos desde que comenzó la pantalla de agradecimiento
+  if (millis() - graciasStartTime > 5000) {
+    // Si han pasado 5 segundos, cambia al caso 1
+    screen=1
+    // Reinicia la variable de tiempo para futuros usos
+    graciasStartTime = null;
+  }
 }
+

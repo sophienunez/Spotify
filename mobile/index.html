@@ -23,41 +23,91 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"
         integrity="sha512-rCZdHNB0AePry6kAnKAVFMRfWPmUXSo+/vlGtrOUvhsxD0Punm/xWbEh+8vppPIOzKB9xnk42yCRZ5MD/jvvjQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script src="index.js" async defer></script>
 
     <!---<audio autoplay> 
-        <source src="mupi-assets/audio/dancing-song.mp3" type="audio/mpeg" id="songToDance">
-    </audio> --->
+            <source src="mupi-assets/audio/dancing-song.mp3" type="audio/mpeg" id="songToDance">
+        </audio> --->
 
-    <form action="" id="Registro">
+    <div action="" id="Registro">
         <!-- Campo para el nombre -->
         <label for="name">¿Cual es tu nombre?</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Sophie" required>
+        <input type="text" id="name" name="nombre" placeholder="Nombre" required>
 
         <!-- Campo para el correo -->
         <label for="email">¿Cual es tu email?</label>
-        <input type="email" id="correo" name="correo" placeholder="User@gmail.com" required>
+        <input type="email" id="email" name="correo" placeholder="Correo@gmail.com" required>
 
         <!-- Botón de registro -->
-        <button onclick="BtnIrAjugar()">¡A jugar!</button>
 
-    </form>
+        <button onclick="BtnIrAjugar()" id="saveData">¡Reclama tu premio!</button>
+    </div>
 
-    <form action="" id="Puesto">
+    <div action="" id="Puesto">
 
-        <h1 id="titulo">PUESTO</h1>
-        <h1 id="numero">N°1</h1>
-        <h2>Muy bien nombre</h2>
-        <h3>Te has ganado un cupon de descuento del 10% para tu plan de Spotify</h3>
-        <h4>El codigo sera enviado a tu correo</h4>
+        <h1 id="titulo">PUNTAJE</h1>
+        <h1 id="numero"></h1>
+        <h2 class="h2">Muy bien,</h2>
+        <h2 id="printName"></h2>
+        <h3>Te has ganado un cupón de descuento del 10% para tu plan de Spotify</h3>
+        <div class="printMail">
+            <h4>El codigo sera enviado al correo:</h4>
+            <h4 id="printMail"></h4>
+        </div>
+        <button type="button" onclick="irainicio()">Finalizar</button>
 
-        <button type="button" onclick="irainicio()">Hola mundo</button>
+    </div>
+    <!-- Nuevo script para mostrar la puntuación después de que el juego haya terminado -->
 
-    </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const scoreDisplay = document.getElementById("numero");
 
+            function updateScoreDisplay() {
+                // Obtener la puntuación final de window.score
+                const finalScore = window.score;
+
+                if (finalScore !== undefined) {
+                    scoreDisplay.innerText = `${finalScore}`;
+                    console.log(finalScore);
+                }
+            }
+
+            // Llama a la función cada segundo
+            setInterval(updateScoreDisplay, 1000);
+
+            // Escuchar cambios en el localStorage desde otras pestañas
+            window.addEventListener('storage', function (event) {
+                if (event.key === 'finalScore') {
+                    // La puntuación final ha cambiado en otra pestaña, manejar los cambios
+                    const updatedScoreObject = JSON.parse(event.newValue);
+                    const updatedScore = updatedScoreObject.score;
+                    console.log('Puntuación actualizada desde otra pestaña:', updatedScore);
+
+                    // Actualizar la puntuación en la pantalla
+                    scoreDisplay.innerText = `${updatedScore}`;
+                }
+            });
+
+            // Obtener finalScore del localStorage al cargar la página
+            const storedData = localStorage.getItem('finalScore');
+
+            // Verificar si el objeto existe en el localStorage
+            if (storedData !== null) {
+                // El objeto existe, analizar la cadena JSON
+                const parsedData = JSON.parse(storedData);
+                console.log('Final Score almacenado:', parsedData);
+
+                // Puedes hacer algo más con parsedData si es necesario
+            } else {
+                // El objeto no existe en el localStorage
+                console.log('El Final Score no está almacenado.');
+            }
+        });
+    </script>
+
+    <script type="module" src="../play/index.js"></script>
     <script type="module" src="./data.js"></script>
-
 </body>
 
 </html>
